@@ -9,4 +9,10 @@ function theme_enqueue_styles()
         get_stylesheet_directory_uri() . '/style.css',
         array('parent-style')
     );
-}
+    wp_enqueue_style('custom_css', get_theme_file_uri('/scss/custom.css'));
+} 
+
+
+
+
+

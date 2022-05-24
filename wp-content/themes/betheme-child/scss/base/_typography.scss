@@ -1,14 +1,24 @@
 @use "../abstracts" as a;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: a.$roboto;
-}
+.page,
+.single {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: a.$roboto;
+    }
 
-p {
-    color: a.$dark;
+    p {
+        color: a.$dark;
+        font-size: 1.125rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: a.$moss-green;
+    }
 }

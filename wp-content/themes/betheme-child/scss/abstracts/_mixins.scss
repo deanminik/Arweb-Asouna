@@ -1,0 +1,37 @@
+@use "../abstracts/" as a;
+@import "../abstracts/breackpoints";
+
+//GLOBAL MIXINS
+
+//BREAK POINTS
+@mixin mQ_max($arg) {
+    @media only screen and (max-width: $arg) {
+        @content;
+    }
+}
+
+@mixin mQ_min($arg) {
+    @media only screen and (min-width: $arg) {
+        @content;
+    }
+}
+
+//BUTTONS
+@mixin btn_base {
+    font-size: 1rem;
+    color: a.$dark;
+    font-family: a.$roboto;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 23px;
+    background-color: #ffffff;
+    border: 2px solid a.$moss-green;
+    &:hover {
+        background-color: a.$moss-green;
+        border: 2px solid a.$moss-green;
+        color: #fff;
+    }
+    @include mQ_max($movil) {
+        font-size: 0.875rem;
+    }
+}
