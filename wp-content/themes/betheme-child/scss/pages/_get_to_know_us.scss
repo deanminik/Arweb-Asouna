@@ -1,0 +1,73 @@
+@use "../abstracts/" as a;
+
+.custom_counter {
+    .mcb-column-inner.mcb-item-counter-inner {
+        background: none;
+    }
+    .desc_wrapper {
+        .number-wrapper {
+            .label.prefix {
+                background: rgb(170, 0, 0);
+                background: -moz-linear-gradient(
+                    16deg,
+                    rgba(170, 0, 0, 1) 37%,
+                    rgba(35, 38, 61, 1) 88%,
+                    rgba(35, 38, 61, 1) 100%
+                );
+                background: -webkit-linear-gradient(
+                    16deg,
+                    rgba(170, 0, 0, 1) 37%,
+                    rgba(35, 38, 61, 1) 88%,
+                    rgba(35, 38, 61, 1) 100%
+                );
+                background: linear-gradient(
+                    16deg,
+                    rgba(170, 0, 0, 1) 37%,
+                    rgba(35, 38, 61, 1) 88%,
+                    rgba(35, 38, 61, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aa0000",endColorstr="#23263d",GradientType=1);
+            }
+            .number {
+                background: rgb(170, 0, 0);
+                background: -moz-linear-gradient(
+                    16deg,
+                    rgba(170, 0, 0, 1) 37%,
+                    rgba(35, 38, 61, 1) 66%,
+                    rgba(35, 38, 61, 1) 100%
+                );
+                background: -webkit-linear-gradient(
+                    16deg,
+                    rgba(170, 0, 0, 1) 37%,
+                    rgba(35, 38, 61, 1) 66%,
+                    rgba(35, 38, 61, 1) 100%
+                );
+                background: linear-gradient(
+                    16deg,
+                    rgba(170, 0, 0, 1) 37%,
+                    rgba(35, 38, 61, 1) 66%,
+                    rgba(35, 38, 61, 1) 100%
+                );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aa0000",endColorstr="#23263d",GradientType=1);
+
+                font-family: a.$roboto;
+            }
+            //GLOBAL
+            .label.prefix,
+            .number {
+                font-size: 6.4375rem !important;
+                font-weight: bold;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
+.text_next_counter {
+    P {
+        font-size: 2.125rem;
+        letter-spacing: 1px;
+        line-height: 26px;
+    }
+}

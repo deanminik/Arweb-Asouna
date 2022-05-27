@@ -1,3 +1,9 @@
 @use "./base/typography";
+
 @use "./components/buttons";
+@use "./components/visual__h2-p";
 @use "./components/wrap_squareImage_textInfo";
+
+@use "./pages/home";
+@use "./pages/get_to_know_us";
+@use "./pages/get_to_know_us--who_are_we";

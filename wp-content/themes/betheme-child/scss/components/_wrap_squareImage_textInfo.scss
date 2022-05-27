@@ -15,8 +15,8 @@ $space: 4%;
     .section_wrapper {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
-            -ms-flex-direction: row-reverse;
-                flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
     }
 }
 
@@ -32,6 +32,9 @@ $space: 4%;
             border-radius: 8px;
             background-color: #57595f;
         }
+    }
+    p {
+        font-size: 1.125rem;
     }
     //COLUMNS
     &__col-left {
@@ -54,4 +57,3 @@ $space: 4%;
         padding-right: $space + 1%;
     }
 }
-
