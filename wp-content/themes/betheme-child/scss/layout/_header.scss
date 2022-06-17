@@ -1,0 +1,437 @@
+@use "../abstracts/" as a;
+@import "../abstracts/mixins";
+
+//TOP
+.top-area {
+    border-bottom: 1px solid #e9e9eb;
+    padding: 6px 0;
+    .top-area__row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        //GLOBAL
+        P {
+            display: inline;
+            font-weight: 400;
+            font-size: 0.8125rem;
+            color: a.$gray;
+            a {
+                color: a.$gray !important;
+                border-bottom: 1px solid a.$gray;
+                text-decoration: none !important;
+            }
+        }
+        img {
+            position: relative;
+            top: 3px;
+        }
+        //GLOBAL ENDS
+        .top-area__row__col-1 {
+            margin-left: 2%;
+            p {
+                position: relative;
+                left: 3%;
+            }
+        }
+        .top-area__row__col-2 {
+            img {
+                margin-left: -18%;
+                margin-right: 3%;
+            }
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            div {
+                min-width: 212px;
+            }
+        }
+    }
+}
+
+@include mQ_min($default) {
+    //MENU
+    .menu_wrapper {
+        span {
+            font-weight: bold;
+            color: a.$dark;
+            font-size: 0.875rem !important;
+            @include mQ_min($small) {
+                font-size: 1.0625rem;
+            }
+            @include mQ_min($big) {
+                font-size: 1.375rem !important;
+            }
+        }
+        // ul > li {
+        //     &:hover {
+        //         a {
+        //             text-decoration: underline !important;
+        //             -webkit-text-decoration-color: a.$moss-green !important;
+        //             text-decoration-color: a.$moss-green !important;
+        //             text-decoration-thickness: 5px !important;
+        //             text-underline-offset: 12px !important;
+        //         }
+        //     }
+        // }
+        //LEVEL 2
+        .sub-menu {
+            // margin-top: -25px !important;
+            margin-top: -20px !important;
+            border: 1px solid a.$dark;
+            &:hover {
+                margin-left: 20px !important;
+            }
+            margin-left: 20px !important;
+            li {
+                min-width: 250px !important;
+                a {
+                    border-bottom: 0px !important;
+                    .menu-arrow {
+                        color: #fff !important;
+                    }
+                }
+                span {
+                    font-weight: 400 !important;
+                    text-decoration: none !important;
+                    color: a.$dark !important;
+                }
+                &:hover {
+                    // background-color: #fff !important;
+                    a {
+                        background-color: a.$moss-green !important;
+                        margin-top: 12px !important;
+                        margin-bottom: 12px !important;
+                        span {
+                            color: #fff !important;
+                            font-weight: 700 !important;
+                        }
+                    }
+                }
+            }
+            //LEVEL 3
+            li {
+                ul.sub-menu {
+                    li {
+                        a {
+                            background-color: #fff !important;
+                            margin-top: 0px !important;
+                            margin-bottom: 0px !important;
+                            span {
+                                color: a.$dark !important;
+                                font-weight: 400 !important;
+                            }
+                        }
+
+                        &:hover {
+                            a {
+                                background-color: a.$moss-green !important;
+                                span {
+                                    color: #fff !important;
+                                    font-weight: 700 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //BTN CONTACT
+    #Top_bar:not(.is-sticky) {
+        #menu-main > {
+            li:last-child {
+                &:hover {
+                    a {
+                        text-decoration: none !important;
+                    }
+                }
+                a {
+                    border-radius: 57px;
+                    border: 2px solid a.$dark-red;
+                    padding: 0 14px !important;
+                    position: relative;
+                    top: 22px;
+                }
+                span {
+                    line-height: 44px !important;
+                }
+            }
+        }
+    }
+    .menuo-sub-active {
+        #Top_bar {
+            .menu > {
+                li {
+                    ul {
+                        li.current-menu-item > {
+                            a {
+                                background: a.$moss-green !important;
+                                span {
+                                    color: #fff !important;
+                                    font-weight: 700 !important;
+                                }
+                            }
+                        }
+                        li.current-menu-ancestor > {
+                            a {
+                                background: a.$moss-green !important;
+                                span {
+                                    color: #fff !important;
+                                    font-weight: 700 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #Top_bar:not(.is-sticky) {
+        .menu_wrapper ul > li {
+            &:hover {
+                a {
+                    text-decoration: underline !important;
+                    -webkit-text-decoration-color: a.$moss-green !important;
+                    text-decoration-color: a.$moss-green !important;
+                    text-decoration-thickness: 5px !important;
+                    text-underline-offset: 12px !important;
+                }
+            }
+        }
+        // .menu_wrapper .sub-menu {
+        //     margin-top: -7px !important;
+        // }
+    }
+}
+
+@include mQ_min($tablet) {
+    //SUB HEADER
+    #Subheader {
+        //GLOBAL
+        h1.title,
+        a,
+        li:last-child,
+        span .icon-right-open,
+        .icon-right-open::before {
+            color: #fff !important;
+        }
+
+        //GLOBAL ENDS
+        .column {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            h1.title {
+                text-align: left !important;
+            }
+            .breadcrumbs {
+                li {
+                    a {
+                        font-weight: 400;
+                        -webkit-text-decoration: revert-layer;
+                        text-decoration: revert-layer;
+                    }
+                    span {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .breadcrumbs li:last-child {
+        font-weight: 700;
+        text-decoration: underline !important;
+    }
+    .breadcrumbs.no-link {
+        .home-breadcrumb {
+            position: relative;
+            top: 7px;
+            left: 6px;
+        }
+        li:nth-child(1) {
+            a {
+                // display: none !important;
+                // visibility: hidden !important;
+                // &::before {
+                //     content: url("https://www.asouna.com/wp-content/uploads/2022/06/home-icon.png");
+                //     position: relative;
+                //     top: 6px;
+                //     left: 6px;
+                // }
+            }
+        }
+    }
+}
+
+@include mQ_max($default) {
+    .top_bar_right {
+        // search icon facebook and whatsapp
+        display: none;
+    }
+}
+@include mQ_min($default) {
+    #search_button,
+    .facebook-icon,
+    .whatsapp-icon {
+        padding: 0 9px;
+    }
+
+    .facebook-icon,
+    .whatsapp-icon {
+        position: relative;
+        top: 4px;
+    }
+}
+
+.icon-menu-fine {
+    &::before {
+        content: url("https://www.asouna.com/wp-content/uploads/2022/06/bars.svg");
+    }
+}
+
+@include mQ_max($default) {
+    /*
+    ORGANIZE-> THIS IS IN THE TOP AREA
+    */
+    .top-area__row__col-1,
+    .top-area__row__col-2 div:nth-child(2) {
+        display: none;
+    }
+    .top-area .top-area__row .top-area__row__col-2 img {
+        margin-left: -18%;
+        margin-right: 3%;
+    }
+    .top-area__row__col-2 {
+        margin-left: 8%;
+    }
+}
+
+@include mQ_max($movil) {
+    /*
+    ORGANIZE-> THIS IS IN THE TOP AREA
+    */
+
+    .top-area p {
+        font-size: 10px !important;
+    }
+    .top-area .top-area__row .top-area__row__col-2 div {
+        min-width: 160px;
+    }
+    .top-area__row__col-2 {
+        margin-left: 11%;
+    }
+    /*
+    ORGANIZE-> SLIDER BULLETS
+    */
+    // .tp-bullets.hesperiden.vertical.nav-pos-hor-right.nav-pos-ver-center.nav-dir-vertical {
+    //     position: relative;
+    //     top: 65px !important;
+    // }
+    .tp-bullets.hesperiden.vertical.nav-pos-hor-right.nav-pos-ver-center.nav-dir-vertical.rs-touchhover {
+        position: relative;
+        top: 63px !important;
+    }
+}
+
+@include mQ_min($big) {
+    .menu_wrapper .sub-menu {
+        // margin-top: -21px !important;
+        margin-top: -19px !important;
+    }
+    #Top_bar .menu li ul li {
+        width: 293px;
+    }
+}
+
+// @include mQ_min($default) {
+//     #Top_bar.is-sticky{
+
+//     }
+// }
+
+@include mQ_min($default) {
+    #Subheader {
+        margin-bottom: 1%;
+    }
+}
+
+@include mQ_min(700px) {
+    // #Top_bar:not(.is-sticky) {
+    //     #logo {
+    //         height: 68px !important;
+    //     }
+    // }
+    #Top_bar:not(.is-sticky) #logo {
+        @include mQ_min(1295px) {
+            height: 81px !important;
+        }
+
+        .top_bar_left.clearfix {
+            padding-top: 1%;
+        }
+    }
+}
+
+@include mQ_max($movil) {
+    .top-area__row__col-2 div:nth-child(3) {
+        position: relative;
+        top: 3px;
+    }
+    .responsive-menu-toggle {
+        margin-right: 13px;
+    }
+    #Top_bar {
+        height: 73px;
+    }
+    .logo-mobile.scale-with-grid {
+        max-height: 58.983px !important;
+    }
+    .mobile-header-mini #Top_bar a.responsive-menu-toggle {
+        top: 39px !important;
+    }
+}
+
+@include mQ_min($default) {
+    #Top_bar:not(.is-sticky) {
+        .menu_wrapper {
+            position: relative;
+            top: 8px;
+        }
+        #search_button::before {
+            content: url("https://www.asouna.com/wp-content/uploads/2022/06/magnifying-glass.svg") !important;
+            position: absolute !important;
+        }
+        #search_button svg {
+            visibility: hidden !important;
+        }
+    }
+}
+
+//CHECK
+@include mQ_min($default) {
+    .wrap_slider .col_12 .carousel_posts.up h4 {
+        top: 145px !important;
+        width: 271px;
+    }
+
+    .home {
+        .wrap_slider .col_12 .carousel_posts.up .date_label {
+            top: 212px !important;
+        }
+    }
+}
+@media screen and (min-width: 1275px) and (max-width: 1300px) {
+    .home .wrap_slider .col_12 .carousel_posts.up .button.the-icon.slider_prev.slick-arrow {
+        left: -68px !important;
+    }
+}
+
+@include mQ_max($movil) {
+    #Top_bar {
+        border-bottom: 1px solid #ffff !important;
+    }
+}

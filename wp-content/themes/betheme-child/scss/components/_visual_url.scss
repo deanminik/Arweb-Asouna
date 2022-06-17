@@ -1,0 +1,8 @@
+@import "../abstracts/mixins";
+
+.visual_url {
+    @include links;
+    a {
+        font-size: 0.875rem;
+    }
+}

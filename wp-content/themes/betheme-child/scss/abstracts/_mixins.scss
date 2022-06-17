@@ -35,3 +35,82 @@
         font-size: 0.875rem;
     }
 }
+
+//MULTICOLOR:
+//  Currently in
+//      Get to know us
+//      Savings
+
+@mixin multicolor {
+    background: rgb(170, 0, 0);
+    background: -o-linear-gradient(74deg, rgba(170, 0, 0, 1) 37%, rgba(35, 38, 61, 1) 66%, rgba(35, 38, 61, 1) 100%);
+    background: linear-gradient(16deg, rgba(170, 0, 0, 1) 37%, rgba(35, 38, 61, 1) 66%, rgba(35, 38, 61, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aa0000",endColorstr="#23263d",GradientType=1);
+    font-size: 6.4375rem !important;
+    font-weight: bold;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: a.$roboto;
+}
+
+@mixin specialParagraph {
+    font-size: 2.125rem;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+@mixin links {
+    a {
+        color: a.$dark !important;
+        text-decoration: revert-layer;
+        -webkit-text-decoration: revert-layer;
+        font-size: 1.125rem !important;
+        &:hover {
+            color: a.$moss-green !important;
+        }
+        @include mQ_max($movil) {
+            font-size: 14px !important;
+        }
+    }
+}
+
+//SLIDERS AND CAROUSELS
+@mixin arrowLeft {
+    content: url("/wp-content/uploads/2022/06/circle-chevron-left.svg");
+    @include mQ_max($movil) {
+        content: url("/wp-content/uploads/2022/06/circle-chevron-left_small.svg");
+    }
+}
+@mixin arrowRight {
+    content: url("/wp-content/uploads/2022/06/circle-chevron-right.svg");
+    @include mQ_max($movil) {
+        content: url("/wp-content/uploads/2022/06/circle-chevron-right-small.svg");
+    }
+}
+
+//CHECK LIST
+
+@mixin checkList {
+    ul {
+        list-style: none !important;
+        li {
+            &::before {
+                content: url("/wp-content/uploads/2022/06/check-icon.webp") !important;
+                position: relative;
+                left: -29px;
+                top: 27px;
+            }
+            p {
+                margin-bottom: -33px;
+                font-size: 1.125rem;
+                letter-spacing: 0px;
+                color: a.$dark;
+                font-weight: 700;
+            }
+            @include mQ_max($movil) {
+                margin-bottom: 10% !important;
+            }
+        }
+    }
+}

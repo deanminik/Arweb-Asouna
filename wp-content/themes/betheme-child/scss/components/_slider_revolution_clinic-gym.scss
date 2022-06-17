@@ -1,0 +1,31 @@
+@import "../abstracts/mixins";
+
+//GALLERY CLINIC AND GYM
+#rev_slider_2_1_wrapper,
+#rev_slider_4_1_wrapper {
+    .tp-leftarrow.tparrows.hesperiden.noSwipe {
+        &::before {
+            @include arrowLeft;
+        }
+    }
+    .tp-rightarrow.tparrows.hesperiden.noSwipe {
+        &::before {
+            @include arrowRight;
+        }
+    }
+}
+
+//PROMOTIONS
+#rev_slider_3_2_wrapper,
+#rev_slider_5_2_wrapper {
+    .tp-rightarrow.tparrows.hesperiden {
+        &::before {
+            content: url("/wp-content/uploads/2022/06/circle-chevron-right-white.svg") !important;
+        }
+    }
+    .tp-leftarrow.tparrows.hesperiden {
+        &::before {
+            content: url("/wp-content/uploads/2022/06/circle-chevron-left-white.svg") !important;
+        }
+    }
+}

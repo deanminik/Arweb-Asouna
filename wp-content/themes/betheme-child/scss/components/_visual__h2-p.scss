@@ -1,8 +1,12 @@
 // This component is for different pages:
-
+@import "../abstracts/mixins";
 .visual_h2-p {
     h2 {
         letter-spacing: 1px;
         line-height: 46px;
+        @include mQ_max($movil) {
+            letter-spacing: 0px !important;
+            line-height: 33px !important;
+        }
     }
 }

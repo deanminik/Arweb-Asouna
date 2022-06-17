@@ -1,0 +1,59 @@
+// This component is for different pages:
+
+// CONÓZCANOS
+// CONÓZCANOS - PERSONAL ADMINISTRATIVO
+// TODOS LOS SERVICIOS
+// UNIDADES DE NEGOCIO
+
+@import "../abstracts/mixins";
+
+//VARIABLES
+$space: 4%;
+
+//MIXINS
+@mixin row_reverse {
+    .section_wrapper {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+}
+
+.wrap_text-info_square-image {
+    //GLOBAL
+    &__col-left,
+    &__col-right {
+        margin: auto;
+    }
+
+    &__image {
+        img {
+            border-radius: 8px;
+            background-color: #57595f;
+        }
+    }
+    p {
+        font-size: 1.125rem;
+    }
+    //COLUMNS
+    &__col-left {
+        text-align: end;
+        padding-right: $space;
+    }
+
+    &__col-right {
+        padding-left: $space;
+    }
+}
+//THE INITIAL COLUMN LEFT CHANGES THE PLACE WITH THE COLUMN RIGHT
+.wrap_text-info_square-image.row-reverse {
+    @include row_reverse;
+    .wrap_text-info_square-image__col-left {
+        text-align: start;
+        padding-left: $space;
+    }
+    .wrap_text-info_square-image__col-right {
+        padding-right: $space + 1%;
+    }
+}

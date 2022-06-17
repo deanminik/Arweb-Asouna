@@ -1,0 +1,13 @@
+@import "../abstracts/mixins";
+.error404 {
+    #Content {
+        margin-top: 6%;
+        margin-bottom: 10% !important;
+        .mcb-section .mcb-wrap .icon-wrapper i {
+            color: #006b76 !important;
+            @include mQ_min($movil) {
+                font-size: 233px !important;
+            }
+        }
+    }
+}

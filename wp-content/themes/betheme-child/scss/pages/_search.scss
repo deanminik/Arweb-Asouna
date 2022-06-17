@@ -1,0 +1,8 @@
+@use "../abstracts/" as a;
+@import "../abstracts/mixins";
+
+.search {
+    .search-footer {
+        @include links;
+    }
+}

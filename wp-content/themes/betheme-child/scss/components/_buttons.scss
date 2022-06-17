@@ -1,8 +1,59 @@
 @import "../abstracts/mixins";
 
 .page,
-.single {
+.single,
+.error404 {
     a.button {
         @include btn_base;
+    }
+}
+
+// @media screen and (min-width: 768px) {
+.btn_contacto {
+    position: fixed;
+    bottom: 218px;
+    right: -57px;
+    @include mQ_max($movil) {
+        right: -190px;
+    }
+    width: 114px;
+    height: 80px;
+    margin-right: 37px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    text-align: center;
+    font-size: 30px;
+    line-height: 0.84;
+    overflow: hidden;
+    padding: 6px 8px 14px 0px;
+    text-align: left;
+    z-index: 999;
+    font-family: avenir-black;
+    color: #ffffff;
+    font-style: normal;
+    img {
+        @include mQ_max($movil) {
+            width: 25%;
+        }
+    }
+}
+.btn_contacto em {
+    font-style: normal !important;
+    position: relative;
+    top: 6px !important;
+}
+
+@include mQ_max($movil) {
+    .btn_contacto {
+        right: -196px;
+        width: 220px;
+    }
+}
+// }
+
+@include mQ_min($default) {
+    .button.btn_custom.button_size_2 {
+        padding: 12px 35px 12px 35px !important;
     }
 }

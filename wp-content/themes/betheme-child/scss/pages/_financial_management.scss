@@ -1,0 +1,40 @@
+@import "../abstracts/mixins";
+
+.mfn-visualeditor-content.mfn-inline-editor {
+    h3 {
+        height: 26px;
+        line-height: 19px !important;
+    }
+    div {
+        div {
+            font-size: 18px !important;
+        }
+    }
+}
+.financial_management {
+    @include mQ_max(1024px) {
+        .mfn-visualeditor-content.mfn-inline-editor div {
+            display: inline-grid;
+        }
+    }
+}
+
+@include mQ_max($movil) {
+    .column.mcb-column.mcb-item-fca66b549.one-third.tablet-one-third.mobile-one.column_visual.visual__contact h3,
+    .column.mcb-column.mcb-item-8d3e2e565.one-third.tablet-one-third.mobile-one.column_visual.visual__contact H3 {
+        line-height: 23px !important;
+        margin-bottom: 15% !important;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1050px) {
+    .visual__contact {
+        h3 {
+            line-height: 23px !important;
+        }
+        h4 {
+            line-height: 24px !important;
+            height: 52px !important;
+        }
+    }
+}

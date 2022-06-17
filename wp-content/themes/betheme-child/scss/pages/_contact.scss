@@ -1,0 +1,161 @@
+@use "../abstracts/" as a;
+@import "../abstracts/mixins";
+
+//BTN CONTACT MENU
+
+#menu-item-127 {
+    a {
+        &:hover {
+            background-color: a.$dark-red;
+            span {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.page-id-125 {
+    #menu-item-127 {
+        a {
+            background-color: a.$dark-red;
+            span {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.visual_contact {
+    @include links;
+    a {
+        font-size: 14px !important;
+    }
+    .tel,
+    .mail,
+    .address {
+        &::before {
+            margin-right: 25px;
+            position: absolute;
+        }
+        p {
+            margin-left: 7%;
+            @include mQ_max($movil) {
+                margin-left: 15%;
+            }
+        }
+    }
+    .tel {
+        &::before {
+            content: url("/wp-content/uploads/2022/06/headset.webp");
+        }
+    }
+    .mail {
+        &::before {
+            content: url("/wp-content/uploads/2022/06/envelope.svg");
+        }
+    }
+    .address {
+        &::before {
+            content: url("/wp-content/uploads/2022/06/map.svg");
+        }
+        p {
+            @include mQ_min($small) {
+                padding-right: 11%;
+            }
+        }
+    }
+}
+.column.mcb-column.one-fifth.tablet-one-fifth.mobile-one.column_image.icons-contact,
+.column.mcb-column.one-fifth.tablet-one-fifth.mobile-one.column_image.icons-contact.whats {
+    @include mQ_max($movil) {
+        width: 50% !important;
+    }
+}
+
+.icons-contact.whats {
+    margin-left: -54px;
+    @include mQ_max($movil) {
+        margin-left: -100px;
+    }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1000px) {
+    .wrap.mcb-wrap.one-second.tablet-one-second.mobile-one.col_contact_info.clearfix {
+        width: 100% !important;
+    }
+}
+//FORM
+.col_form {
+    @include mQ_min($small) {
+        padding: 0 4%;
+        padding-top: 13%;
+    }
+}
+
+#wpcf7-f404-p125-o1 {
+    label {
+        font-size: 16px !important;
+        letter-spacing: 0px;
+        line-height: 28px;
+        color: a.$dark;
+        font-weight: 400 !important;
+    }
+}
+#wpcf7-f404-p125-o1 label span {
+    margin-top: 12px;
+}
+
+#wpcf7-f404-p125-o1 {
+    .custom-radios {
+    }
+}
+
+.wpcf7-form-control.has-spinner.wpcf7-submit {
+    @include btn_base;
+}
+
+.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required,
+.wpcf7-form-control.wpcf7-textarea {
+    border-radius: 5px;
+    border: 1px solid #bcbdc4;
+}
+
+//------------------------------------------------------------
+.page-id-125 {
+    h2 {
+        @include mQ_min($default) {
+            line-height: 45px !important;
+            margin-bottom: 9% !important;
+        }
+    }
+
+    @include mQ_min($tablet) {
+        .wpcf7-form-control.wpcf7-radio {
+            position: relative;
+            left: -20px;
+            top: 10px;
+        }
+    }
+}
+
+//THANKS
+.page-id-420 {
+    @include mQ_min($big) {
+        #Content {
+            padding-top: 5%;
+            padding-bottom: 12%;
+        }
+    }
+    @media screen and (min-width: 750px) and (max-width: 1025px) {
+        #Footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    @include mQ_max($movil) {
+        .check-img-thanks img {
+            width: 160px !important;
+        }
+    }
+}

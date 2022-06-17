@@ -20,5 +20,3 @@ You will see node_modules and the package.json
 npx sass --watch custom.scss:custom.css
 ```
 
-p 18px 
-cuadro y texto 20px

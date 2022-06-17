@@ -4,7 +4,7 @@
 // CONÓZCANOS - PERSONAL ADMINISTRATIVO
 // TODOS LOS SERVICIOS
 // UNIDADES DE NEGOCIO
-
+@use "../abstracts/" as a;
 @import "../abstracts/mixins";
 
 //VARIABLES
@@ -34,7 +34,9 @@ $space: 4%;
         }
     }
     p {
-        font-size: 1.125rem;
+        @include mQ_min($tablet) {
+            font-size: 1.25rem !important;
+        }
     }
     //COLUMNS
     &__col-left {
@@ -46,6 +48,16 @@ $space: 4%;
         padding-left: $space;
     }
 }
+
+.section.wrap_special_title_img_text {
+    position: relative;
+    left: 8px;
+}
+@include mQ_max($movil) {
+    .column_visual.wrap_text-info_square-image__visual-editor {
+        text-align: left;
+    }
+}
 //THE INITIAL COLUMN LEFT CHANGES THE PLACE WITH THE COLUMN RIGHT
 .wrap_text-info_square-image.row-reverse {
     @include row_reverse;
@@ -55,5 +67,111 @@ $space: 4%;
     }
     .wrap_text-info_square-image__col-right {
         padding-right: $space + 1%;
+    }
+}
+
+@include mQ_max($movil) {
+    .wrap_text-info_square-image {
+        p {
+            font-size: 1rem !important;
+        }
+
+        .wrap_text-info_square-image__col-left {
+        }
+        .image_frame.element_classes.image_item.no_link.scale-with-grid.alignnone.stretch.no_border.hover-disable {
+            width: 476px !important;
+        }
+    }
+}
+.wrap_text-info_square-image {
+    @include mQ_max($movil) {
+        h2 {
+            margin-bottom: 16px !important;
+        }
+    }
+    .wrap_text-info_square-image__col-right {
+        .mcb-wrap-inner img {
+            @include mQ_min($tablet) {
+                position: relative !important;
+                left: -24px;
+                width: 486px !important;
+            }
+            @include mQ_max($movil) {
+                width: 281px !important;
+            }
+        }
+    }
+}
+
+.wrap_text-info_square-image.row-reverse {
+    .wrap_text-info_square-image__col-right {
+        .mcb-wrap-inner img {
+            position: relative !important;
+            left: 0px !important;
+        }
+    }
+}
+
+@include mQ_max($movil) {
+    .wrap_text-info_square-image__col-right {
+        padding-left: 0% !important;
+    }
+    .wrap_text-info_square-image.row-reverse .wrap_text-info_square-image__col-right .mcb-wrap-inner img {
+        position: relative !important;
+        left: 8px !important;
+    }
+    .wrap_text-info_square-image__col-left {
+        text-align: left;
+    }
+    .wrap_text-info_square-image.row-reverse .wrap_text-info_square-image__col-left {
+        text-align: start;
+        padding-left: 0%;
+    }
+    .column.mcb-column.mcb-item-opznk2eik.two-third.tablet-two-third.mobile-one.column_visual {
+        margin-top: 10px;
+    }
+    .column_button.wrap_text-info_square-image__button {
+        // text-align: center;
+        margin-bottom: 8%;
+    }
+    .wrap_text-info_square-image .section_wrapper.mcb-section-inner {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width: 765px) and (max-width: 900px) {
+    .wrap_text-info_square-image .wrap_text-info_square-image__col-right .mcb-wrap-inner img {
+        position: relative !important;
+        left: 0px;
+        width: 240px !important;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1050px) {
+    .wrap_text-info_square-image .wrap_text-info_square-image__col-right .mcb-wrap-inner img {
+        position: relative !important;
+        left: -24px;
+        width: 324px !important;
+    }
+}
+
+@include mQ_min($default) {
+    .section.wrap_text-info_square-image.row-reverse.default-width {
+        margin-top: -3%;
+    }
+    .wrap_text-info_square-image {
+        .wrap_text-info_square-image__col-left.clearfix {
+            margin-top: 3%;
+        }
+    }
+    .wrap_text-info_square-image.row-reverse {
+        .wrap_text-info_square-image__col-left.clearfix {
+            margin-top: 8%;
+        }
     }
 }

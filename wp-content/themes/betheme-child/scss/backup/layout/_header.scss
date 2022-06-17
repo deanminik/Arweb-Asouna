@@ -1,0 +1,191 @@
+@use "../abstracts/" as a;
+@import "../abstracts/mixins";
+
+@include mQ_min($default) {
+    //TOP
+    .top-area {
+        border-bottom: 1px solid #e9e9eb;
+        padding: 1% 0;
+        .top-area__row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            //GLOBAL
+            P {
+                display: inline;
+                font-weight: 400;
+                font-size: 0.8125rem;
+                color: a.$grey;
+                a {
+                    color: a.$grey !important;
+                    border-bottom: 1px solid a.$grey;
+                    text-decoration: none !important;
+                }
+            }
+            img {
+                position: relative;
+                top: 3px;
+            }
+            //GLOBAL ENDS
+            .top-area__row__col-1 {
+                margin-left: 2%;
+                p {
+                    position: relative;
+                    left: 3%;
+                }
+            }
+            .top-area__row__col-2 {
+                img {
+                    margin-left: -18%;
+                    margin-right: 3%;
+                }
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                div {
+                    min-width: 212px;
+                }
+            }
+        }
+    }
+
+    //MENU
+    .menu_wrapper {
+        span {
+            font-weight: bold;
+            color: a.$dark;
+            font-size: 1.0625rem;
+
+            @include mQ_min($big) {
+                font-size: 1.375rem;
+            }
+        }
+        ul > li {
+            &:hover {
+                a {
+                    text-decoration: underline !important;
+                    -webkit-text-decoration-color: a.$moss-green !important;
+                    text-decoration-color: a.$moss-green !important;
+                    text-decoration-thickness: 5px !important;
+                    text-underline-offset: 12px !important;
+                }
+            }
+        }
+        //BTN CONTACT
+        #menu-main > {
+            li:last-child {
+                &:hover {
+                    a {
+                        text-decoration: none !important;
+                    }
+                }
+                a {
+                    border-radius: 57px;
+                    border: 2px solid a.$dark-red;
+                    padding: 0 14px !important;
+                    position: relative;
+                    top: 22px;
+                }
+                span {
+                    line-height: 44px !important;
+                }
+            }
+        }
+        .sub-menu {
+            margin-top: -25px !important;
+            border: 1px solid a.$dark;
+            &:hover {
+                margin-left: 20px !important;
+            }
+            margin-left: 20px !important;
+            li {
+                min-width: 250px !important;
+                a {
+                    border-bottom: 0px !important;
+                }
+                span {
+                    font-weight: 400;
+                    text-decoration: none !important;
+                }
+                &:hover {
+                    background-color: a.$moss-green;
+                    a {
+                        span {
+                            color: #fff;
+                            font-weight: 700 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menuo-sub-active {
+        #Top_bar {
+            .menu > {
+                li {
+                    ul {
+                        li.current-menu-item > {
+                            a {
+                                background: a.$moss-green !important;
+                                span {
+                                    color: #fff !important;
+                                    font-weight: 700 !important;
+                                }
+                            }
+                        }
+                        li.current-menu-ancestor > {
+                            a {
+                                background: a.$moss-green !important;
+                                span {
+                                    color: #fff !important;
+                                    font-weight: 700 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //SUB HEADER
+    #Subheader {
+        //GLOBAL
+        h1.title,
+        a,
+        li:last-child,
+        span .icon-right-open,
+        .icon-right-open::before {
+            color: #fff !important;
+        }
+
+        //GLOBAL ENDS
+        .column {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            h1.title {
+                text-align: left !important;
+            }
+            .breadcrumbs {
+                li {
+                    a {
+                        font-weight: 400;
+                        -webkit-text-decoration: revert-layer;
+                        text-decoration: revert-layer;
+                    }
+                    span {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .breadcrumbs li:last-child {
+        font-weight: 700;
+    }
+}

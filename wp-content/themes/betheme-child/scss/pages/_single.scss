@@ -1,0 +1,29 @@
+@use "../abstracts/" as a;
+.single {
+    .column.one.post-nav.minimal,
+    .section.section-post-related,
+    .section.section-post-intro-share,
+    .category.meta-categories,
+    .category.mata-tags,
+    .vcard.author.post-author .icon-user,
+    .vcard.author.post-author .fn {
+        display: none !important;
+    }
+    #Subheader {
+        .container {
+            .column {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+            }
+        }
+    }
+    .fixed-nav.fixed-nav-prev .arrow,
+    .fixed-nav.fixed-nav-next .arrow {
+        background-color: a.$moss-green;
+    }
+}

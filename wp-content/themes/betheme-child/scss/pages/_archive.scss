@@ -1,0 +1,17 @@
+@use "../abstracts/" as a;
+
+.archive.category {
+    .title {
+        font-size: 3rem !important;
+        font-weight: 700 !important;
+    }
+    .section.section-filters {
+        display: none;
+    }
+    .image_links.double {
+        display: none !important;
+    }
+    .post-more {
+        color: a.$moss-green;
+    }
+}

@@ -1,0 +1,11 @@
+.single {
+    .column.one.post-nav.minimal,
+    .section.section-post-related,
+    .section.section-post-intro-share,
+    .category.meta-categories,
+    .category.mata-tags,
+    .vcard.author.post-author .icon-user,
+    .vcard.author.post-author .fn {
+        display: none !important;
+    }
+}

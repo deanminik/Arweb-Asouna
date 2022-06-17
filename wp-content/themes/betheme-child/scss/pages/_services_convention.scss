@@ -1,0 +1,20 @@
+@import "../abstracts/mixins";
+
+.wrap_conventions {
+    .column.mcb-column.column_image {
+        margin: auto;
+    }
+    @include mQ_max($movil) {
+        .column.mcb-column.column_image img {
+            width: 160px;
+        }
+    }
+    @include links;
+    a {
+        font-size: 14px !important;
+    }
+}
+
+.wrap_conventions .mfn-visualeditor-content.mfn-inline-editor p strong {
+    display: block;
+}

@@ -1,0 +1,80 @@
+@use "../abstracts/" as a;
+@import "../abstracts/mixins";
+
+.wrap_services p,
+.wrap_services ul li,
+.bg-gray p {
+    font-size: 1.125rem;
+}
+.wrap_services {
+    strong {
+        font-family: a.$roboto;
+        font-size: 1.5rem;
+    }
+
+    .strong-less {
+        strong {
+            font-size: 1.25rem;
+        }
+    }
+    ul {
+        list-style: none;
+        li {
+            font-size: 1.125rem;
+            letter-spacing: 0px;
+            line-height: 28px;
+            color: a.$dark !important;
+            @include links;
+
+            &::before {
+                content: url("/wp-content/uploads/2022/06/red-bullet.svg");
+                position: absolute;
+                left: -1px;
+            }
+        }
+    }
+}
+
+.bg-gray {
+    border-radius: 5px;
+    background-color: #eee;
+    padding-top: 3%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    @include links;
+}
+
+.strong-less {
+    @include mQ_min($tablet) {
+        border-right: 3px solid #828282;
+    }
+}
+
+.column.mcb-column.mcb-item-n22jyvez9.strong-less,
+.column.mcb-column.mcb-item-dab7e4a09.strong-less,
+.column.mcb-column.mcb-item-fllvmpzov.strong-less {
+    border-right: 0px !important;
+}
+
+@include mQ_min($default) {
+    .wrap_services ul {
+        margin-top: 3%;
+        margin-bottom: 5%;
+    }
+    .strong-less p {
+        margin-bottom: 10px;
+    }
+    .strong-less .mfn-visualeditor-content p:nth-child(1) {
+        margin-bottom: 6%;
+    }
+    .strong-less .mfn-visualeditor-content p {
+        position: relative;
+        top: 20px;
+    }
+}
+
+@include mQ_max($movil) {
+    .wrap_services ul li {
+        font-size: 0.875rem !important;
+    }
+}

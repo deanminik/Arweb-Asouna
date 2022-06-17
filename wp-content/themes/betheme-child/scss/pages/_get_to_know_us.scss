@@ -1,73 +1,86 @@
-@use "../abstracts/" as a;
+@import "../abstracts/mixins";
 
 .custom_counter {
     .mcb-column-inner.mcb-item-counter-inner {
         background: none;
+        @include mQ_max($small) {
+            margin-bottom: 0px !important;
+        }
     }
     .desc_wrapper {
         .number-wrapper {
-            .label.prefix {
-                background: rgb(170, 0, 0);
-                background: -moz-linear-gradient(
-                    16deg,
-                    rgba(170, 0, 0, 1) 37%,
-                    rgba(35, 38, 61, 1) 88%,
-                    rgba(35, 38, 61, 1) 100%
-                );
-                background: -webkit-linear-gradient(
-                    16deg,
-                    rgba(170, 0, 0, 1) 37%,
-                    rgba(35, 38, 61, 1) 88%,
-                    rgba(35, 38, 61, 1) 100%
-                );
-                background: linear-gradient(
-                    16deg,
-                    rgba(170, 0, 0, 1) 37%,
-                    rgba(35, 38, 61, 1) 88%,
-                    rgba(35, 38, 61, 1) 100%
-                );
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aa0000",endColorstr="#23263d",GradientType=1);
-            }
-            .number {
-                background: rgb(170, 0, 0);
-                background: -moz-linear-gradient(
-                    16deg,
-                    rgba(170, 0, 0, 1) 37%,
-                    rgba(35, 38, 61, 1) 66%,
-                    rgba(35, 38, 61, 1) 100%
-                );
-                background: -webkit-linear-gradient(
-                    16deg,
-                    rgba(170, 0, 0, 1) 37%,
-                    rgba(35, 38, 61, 1) 66%,
-                    rgba(35, 38, 61, 1) 100%
-                );
-                background: linear-gradient(
-                    16deg,
-                    rgba(170, 0, 0, 1) 37%,
-                    rgba(35, 38, 61, 1) 66%,
-                    rgba(35, 38, 61, 1) 100%
-                );
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aa0000",endColorstr="#23263d",GradientType=1);
-
-                font-family: a.$roboto;
-            }
-            //GLOBAL
             .label.prefix,
             .number {
-                font-size: 6.4375rem !important;
-                font-weight: bold;
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                @include multicolor;
             }
         }
     }
+    @include mQ_max($movil) {
+        margin-left: -6% !important;
+    }
 }
 .text_next_counter {
+    @include mQ_min($small) {
+        padding-top: 8%;
+        position: relative;
+        left: 31px;
+    }
     P {
-        font-size: 2.125rem;
-        letter-spacing: 1px;
-        line-height: 26px;
+        @include specialParagraph;
+    }
+}
+.column.mcb-column.tablet-one-second.mobile-one.column_visual.text_next_counter {
+    @include mQ_max($default) {
+        width: 100% !important;
+        p {
+            padding-left: 23px;
+            margin-top: -25px;
+        }
+    }
+    @include mQ_max($movil) {
+        margin-bottom: 10%;
+    }
+}
+
+.page,
+.single {
+    .column_visual.special_p {
+        .mfn-visualeditor-content.mfn-inline-editor {
+            p {
+                font-size: 1.125rem !important;
+            }
+        }
+    }
+    .column_visual.margin_top {
+        margin-top: 8%;
+    }
+}
+
+.just-testing {
+}
+
+@include mQ_max($movil) {
+    .mcb-column-inner.mcb-column-inner-aabb20631.mcb-item-visual-inner p {
+        font-size: 29px !important;
+    }
+}
+
+// @media screen and (min-width:1275px) and (max-width:1600px) {
+
+// }
+
+@include mQ_min($default) {
+    .page-id-48 {
+        #Content {
+            padding-top: 78px !important;
+        }
+    }
+}
+
+@include mQ_max($movil) {
+    .column_visual.visual__contact {
+        .mfn-visualeditor-content.mfn-inline-editor h3 {
+            line-height: 23px !important;
+        }
     }
 }
