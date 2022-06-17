@@ -1,8 +1,0 @@
-@import "../abstracts/mixins";
-
-.page,
-.single {
-    a.button {
-        @include btn_base;
-    }
-}
